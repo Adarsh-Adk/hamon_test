@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:hamon_test/core/constants/app_constants.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/entities/custom_exceptions.dart';
 import '../../../domain/entities/student.dart';
 import '../../../domain/entities/students.dart';

@@ -1,6 +1,5 @@
-import 'package:hamon_test/core/entities/data_response.dart';
-import 'package:hamon_test/core/entities/use_case.dart';
-
+import '../../../../../core/entities/data_response.dart';
+import '../../../../../core/entities/use_case.dart';
 import '../../repositories/class_room_repository.dart';
 
 class ClassRoomGetClassRoomsUseCase extends UseCase<DataResponse, NoParams> {

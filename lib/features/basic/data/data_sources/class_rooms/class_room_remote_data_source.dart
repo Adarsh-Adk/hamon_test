@@ -1,6 +1,5 @@
-import 'package:hamon_test/features/basic/domain/entities/classroom.dart';
-
 import '../../../domain/entities/class_rooms.dart';
+import '../../../domain/entities/classroom.dart';
 
 abstract class ClassRoomRemoteDataSource {
   Future<ClassRooms> getClassRooms();

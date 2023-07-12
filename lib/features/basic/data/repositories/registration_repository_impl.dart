@@ -1,6 +1,5 @@
-import 'package:hamon_test/core/entities/data_response.dart';
-
 import '../../../../core/entities/custom_exceptions.dart';
+import '../../../../core/entities/data_response.dart';
 import '../../domain/entities/registration.dart';
 import '../../domain/entities/registrations.dart';
 import '../../domain/repositories/registration_repository.dart';

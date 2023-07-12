@@ -1,5 +1,4 @@
-import 'package:hamon_test/core/entities/data_response.dart';
-
+import '../../../../../core/entities/data_response.dart';
 import '../../../../../core/entities/use_case.dart';
 import '../../repositories/registration_repository.dart';
 

@@ -1,8 +1,7 @@
-import 'package:hamon_test/core/entities/data_response.dart';
-import 'package:hamon_test/core/entities/use_case.dart';
-import 'package:hamon_test/features/basic/domain/use_cases/class_room/params/class_room_set_subject_params.dart';
-
+import '../../../../../core/entities/data_response.dart';
+import '../../../../../core/entities/use_case.dart';
 import '../../repositories/class_room_repository.dart';
+import 'params/class_room_set_subject_params.dart';
 
 class ClassRoomSetSubjectUseCase
     extends UseCase<DataResponse, ClassRoomSetSubjectParams> {

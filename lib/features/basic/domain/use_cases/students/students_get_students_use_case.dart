@@ -1,6 +1,6 @@
-import 'package:hamon_test/core/entities/data_response.dart';
-import 'package:hamon_test/core/entities/use_case.dart';
-import 'package:hamon_test/features/basic/domain/repositories/students_repository.dart';
+import '../../../../../core/entities/data_response.dart';
+import '../../../../../core/entities/use_case.dart';
+import '../../repositories/students_repository.dart';
 
 class StudentsGetStudentsUseCase extends UseCase<DataResponse, NoParams> {
   final StudentsRepository studentsRepository;

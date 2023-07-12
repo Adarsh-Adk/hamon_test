@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:hamon_test/core/constants/app_constants.dart';
-import 'package:hamon_test/features/basic/data/data_sources/subjects/subjects_remote_data_source.dart';
-import 'package:hamon_test/features/basic/domain/entities/subject.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/entities/custom_exceptions.dart';
+import '../../../domain/entities/subject.dart';
 import '../../../domain/entities/subjects.dart';
+import 'subjects_remote_data_source.dart';
 
 class SubjectsRemoteDataSourceImpl implements SubjectsRemoteDataSource {
   final http.Client client;
