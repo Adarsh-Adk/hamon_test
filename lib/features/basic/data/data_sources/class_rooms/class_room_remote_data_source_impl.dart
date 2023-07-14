@@ -64,7 +64,6 @@ class ClassRoomRemoteDataSourceImpl implements ClassRoomRemoteDataSource {
     );
     if (response.statusCode == 200) {
       var result = ClassRoom.fromJson(jsonDecode(response.body));
-      log(result.toString());
       return result;
     } else {
       log(response.statusCode.toString());

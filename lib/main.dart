@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'core/utils/simple_bloc_observer.dart';
+import 'features/basic/presentation/blocs/class_room_screen_blocs/class_room_set_subject_bloc/class_room_set_subject_bloc.dart';
 import 'features/basic/presentation/blocs/class_room_screen_blocs/get_class_rooms_bloc/get_class_rooms_bloc.dart';
 import 'features/basic/presentation/blocs/class_room_screen_blocs/get_classroom_by_id_bloc/get_class_room_by_id_bloc.dart';
 import 'features/basic/presentation/blocs/registration_screen_blocs/delete_registration_bloc/delete_registration_bloc.dart';
@@ -13,6 +15,7 @@ import 'injection_handler.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = SimpleBlocObserver();
   await di.init();
   runApp(MultiBlocProvider(
     providers: [
@@ -30,6 +33,9 @@ void main() async {
       ),
       BlocProvider(
         create: (_) => di.getIt.get<GetClassRoomByIdBloc>(),
+      ),
+      BlocProvider(
+        create: (_) => di.getIt.get<ClassRoomSetSubjectBloc>(),
       ),
       BlocProvider(
         create: (_) => di.getIt.get<DeleteRegistrationBloc>(),
@@ -54,7 +60,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

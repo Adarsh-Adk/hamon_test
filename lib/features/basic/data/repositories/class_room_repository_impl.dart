@@ -45,8 +45,8 @@ class ClassRoomRepositoryImpl implements ClassRoomRepository {
   Future<DataResponse> getClassRoom(int? id) async {
     try {
       final data = await remoteDataSource.getClassRoom(id);
-      if (data.subject != "" || data.subject != null) {
-        int subject = int.parse(data.subject!);
+      if (data.subject.runtimeType == int) {
+        int subject = data.subject;
         final subName = await subjectsRemoteDataSource.getSubject(subject);
         ClassRoom classRoomDataModel = ClassRoom(
             id: data.id,
@@ -69,8 +69,8 @@ class ClassRoomRepositoryImpl implements ClassRoomRepository {
   Future<DataResponse> setSubject(int? subjectId, int? classRoomId) async {
     try {
       final data = await remoteDataSource.setSubject(subjectId, classRoomId);
-      if (data.subject != "") {
-        int subject = int.parse(data.subject!);
+      if (data.subject.runtimeType == int) {
+        int subject = data.subject!;
         final subName = await subjectsRemoteDataSource.getSubject(subject);
 
         ClassRoom classRoomDataModel = ClassRoom(

@@ -25,6 +25,7 @@ import 'features/basic/domain/use_cases/registrations/registrations_get_registra
 import 'features/basic/domain/use_cases/registrations/registrations_set_registration_use_case.dart';
 import 'features/basic/domain/use_cases/students/students_get_students_use_case.dart';
 import 'features/basic/domain/use_cases/subjects/subjects_get_subjects_use_case.dart';
+import 'features/basic/presentation/blocs/class_room_screen_blocs/class_room_set_subject_bloc/class_room_set_subject_bloc.dart';
 import 'features/basic/presentation/blocs/class_room_screen_blocs/get_class_rooms_bloc/get_class_rooms_bloc.dart';
 import 'features/basic/presentation/blocs/class_room_screen_blocs/get_classroom_by_id_bloc/get_class_room_by_id_bloc.dart';
 import 'features/basic/presentation/blocs/registration_screen_blocs/delete_registration_bloc/delete_registration_bloc.dart';
@@ -38,6 +39,7 @@ final getIt = GetIt.instance;
 Future<void> init() async {
   getIt.registerFactory(() => GetClassRoomsBloc(getIt()));
   getIt.registerFactory(() => GetClassRoomByIdBloc(getIt()));
+  getIt.registerFactory(() => ClassRoomSetSubjectBloc(getIt()));
   getIt.registerFactory(() => DeleteRegistrationBloc(getIt()));
   getIt.registerFactory(() => GetRegistrationsBloc(getIt()));
   getIt.registerFactory(() => RegisterStudentSubjectBloc(getIt()));
