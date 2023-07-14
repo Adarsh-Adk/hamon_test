@@ -7,7 +7,7 @@ part 'subject.g.dart';
 class Subject with _$Subject {
   const factory Subject({
     final int? id,
-    final int? credit,
+    final int? credits,
     final String? name,
     final String? teacher,
   }) = _Subject;

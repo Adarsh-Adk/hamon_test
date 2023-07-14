@@ -8,7 +8,7 @@ part 'class_rooms.g.dart';
 @freezed
 class ClassRooms with _$ClassRooms {
   const factory ClassRooms({
-    final List<ClassRoom>? classRooms,
+    final List<ClassRoom>? classrooms,
   }) = _ClassRooms;
 
   factory ClassRooms.fromJson(Map<String, dynamic> json) =>

@@ -16,7 +16,25 @@ class ClassRoomRepositoryImpl implements ClassRoomRepository {
   Future<DataResponse> getClassRooms() async {
     try {
       final data = await remoteDataSource.getClassRooms();
-      return DataResponse(data: data);
+      List<ClassRoom> classRoomList = [];
+
+      for (ClassRoom classRoom in (data.classrooms ?? [])) {
+        if (classRoom.subject.runtimeType == int) {
+          final subject =
+              await subjectsRemoteDataSource.getSubject(classRoom.subject);
+          final newClassRoom = ClassRoom(
+              id: classRoom.id,
+              subjectId: subject.id,
+              size: classRoom.size,
+              name: classRoom.name,
+              layout: classRoom.layout,
+              subject: subject.name);
+          classRoomList.add(newClassRoom);
+        } else {
+          classRoomList.add(classRoom.copyWith(subject: "Not assigned"));
+        }
+      }
+      return DataResponse(data: data.copyWith(classrooms: classRoomList));
     } on ServerException {
       return DataResponse(
           error: CustomExceptionHandler.exceptionToMessage(ServerException()));

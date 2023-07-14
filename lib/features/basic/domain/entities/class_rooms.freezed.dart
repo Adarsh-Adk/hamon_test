@@ -20,7 +20,7 @@ ClassRooms _$ClassRoomsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClassRooms {
-  List<ClassRoom>? get classRooms => throw _privateConstructorUsedError;
+  List<ClassRoom>? get classrooms => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $ClassRoomsCopyWith<$Res> {
           ClassRooms value, $Res Function(ClassRooms) then) =
       _$ClassRoomsCopyWithImpl<$Res, ClassRooms>;
   @useResult
-  $Res call({List<ClassRoom>? classRooms});
+  $Res call({List<ClassRoom>? classrooms});
 }
 
 /// @nodoc
@@ -50,12 +50,12 @@ class _$ClassRoomsCopyWithImpl<$Res, $Val extends ClassRooms>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? classRooms = freezed,
+    Object? classrooms = freezed,
   }) {
     return _then(_value.copyWith(
-      classRooms: freezed == classRooms
-          ? _value.classRooms
-          : classRooms // ignore: cast_nullable_to_non_nullable
+      classrooms: freezed == classrooms
+          ? _value.classrooms
+          : classrooms // ignore: cast_nullable_to_non_nullable
               as List<ClassRoom>?,
     ) as $Val);
   }
@@ -69,7 +69,7 @@ abstract class _$$_ClassRoomsCopyWith<$Res>
       __$$_ClassRoomsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ClassRoom>? classRooms});
+  $Res call({List<ClassRoom>? classrooms});
 }
 
 /// @nodoc
@@ -83,12 +83,12 @@ class __$$_ClassRoomsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? classRooms = freezed,
+    Object? classrooms = freezed,
   }) {
     return _then(_$_ClassRooms(
-      classRooms: freezed == classRooms
-          ? _value._classRooms
-          : classRooms // ignore: cast_nullable_to_non_nullable
+      classrooms: freezed == classrooms
+          ? _value._classrooms
+          : classrooms // ignore: cast_nullable_to_non_nullable
               as List<ClassRoom>?,
     ));
   }
@@ -97,25 +97,25 @@ class __$$_ClassRoomsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ClassRooms implements _ClassRooms {
-  const _$_ClassRooms({final List<ClassRoom>? classRooms})
-      : _classRooms = classRooms;
+  const _$_ClassRooms({final List<ClassRoom>? classrooms})
+      : _classrooms = classrooms;
 
   factory _$_ClassRooms.fromJson(Map<String, dynamic> json) =>
       _$$_ClassRoomsFromJson(json);
 
-  final List<ClassRoom>? _classRooms;
+  final List<ClassRoom>? _classrooms;
   @override
-  List<ClassRoom>? get classRooms {
-    final value = _classRooms;
+  List<ClassRoom>? get classrooms {
+    final value = _classrooms;
     if (value == null) return null;
-    if (_classRooms is EqualUnmodifiableListView) return _classRooms;
+    if (_classrooms is EqualUnmodifiableListView) return _classrooms;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'ClassRooms(classRooms: $classRooms)';
+    return 'ClassRooms(classrooms: $classrooms)';
   }
 
   @override
@@ -124,13 +124,13 @@ class _$_ClassRooms implements _ClassRooms {
         (other.runtimeType == runtimeType &&
             other is _$_ClassRooms &&
             const DeepCollectionEquality()
-                .equals(other._classRooms, _classRooms));
+                .equals(other._classrooms, _classrooms));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_classRooms));
+      runtimeType, const DeepCollectionEquality().hash(_classrooms));
 
   @JsonKey(ignore: true)
   @override
@@ -147,14 +147,14 @@ class _$_ClassRooms implements _ClassRooms {
 }
 
 abstract class _ClassRooms implements ClassRooms {
-  const factory _ClassRooms({final List<ClassRoom>? classRooms}) =
+  const factory _ClassRooms({final List<ClassRoom>? classrooms}) =
       _$_ClassRooms;
 
   factory _ClassRooms.fromJson(Map<String, dynamic> json) =
       _$_ClassRooms.fromJson;
 
   @override
-  List<ClassRoom>? get classRooms;
+  List<ClassRoom>? get classrooms;
   @override
   @JsonKey(ignore: true)
   _$$_ClassRoomsCopyWith<_$_ClassRooms> get copyWith =>

@@ -8,7 +8,7 @@ part of 'subject.dart';
 
 _$_Subject _$$_SubjectFromJson(Map<String, dynamic> json) => _$_Subject(
       id: json['id'] as int?,
-      credit: json['credit'] as int?,
+      credits: json['credits'] as int?,
       name: json['name'] as String?,
       teacher: json['teacher'] as String?,
     );
@@ -16,7 +16,7 @@ _$_Subject _$$_SubjectFromJson(Map<String, dynamic> json) => _$_Subject(
 Map<String, dynamic> _$$_SubjectToJson(_$_Subject instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'credit': instance.credit,
+      'credits': instance.credits,
       'name': instance.name,
       'teacher': instance.teacher,
     };

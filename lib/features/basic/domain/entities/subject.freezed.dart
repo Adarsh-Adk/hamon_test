@@ -21,7 +21,7 @@ Subject _$SubjectFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Subject {
   int? get id => throw _privateConstructorUsedError;
-  int? get credit => throw _privateConstructorUsedError;
+  int? get credits => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get teacher => throw _privateConstructorUsedError;
 
@@ -35,7 +35,7 @@ abstract class $SubjectCopyWith<$Res> {
   factory $SubjectCopyWith(Subject value, $Res Function(Subject) then) =
       _$SubjectCopyWithImpl<$Res, Subject>;
   @useResult
-  $Res call({int? id, int? credit, String? name, String? teacher});
+  $Res call({int? id, int? credits, String? name, String? teacher});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$SubjectCopyWithImpl<$Res, $Val extends Subject>
   @override
   $Res call({
     Object? id = freezed,
-    Object? credit = freezed,
+    Object? credits = freezed,
     Object? name = freezed,
     Object? teacher = freezed,
   }) {
@@ -61,9 +61,9 @@ class _$SubjectCopyWithImpl<$Res, $Val extends Subject>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      credit: freezed == credit
-          ? _value.credit
-          : credit // ignore: cast_nullable_to_non_nullable
+      credits: freezed == credits
+          ? _value.credits
+          : credits // ignore: cast_nullable_to_non_nullable
               as int?,
       name: freezed == name
           ? _value.name
@@ -84,7 +84,7 @@ abstract class _$$_SubjectCopyWith<$Res> implements $SubjectCopyWith<$Res> {
       __$$_SubjectCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, int? credit, String? name, String? teacher});
+  $Res call({int? id, int? credits, String? name, String? teacher});
 }
 
 /// @nodoc
@@ -98,7 +98,7 @@ class __$$_SubjectCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? credit = freezed,
+    Object? credits = freezed,
     Object? name = freezed,
     Object? teacher = freezed,
   }) {
@@ -107,9 +107,9 @@ class __$$_SubjectCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      credit: freezed == credit
-          ? _value.credit
-          : credit // ignore: cast_nullable_to_non_nullable
+      credits: freezed == credits
+          ? _value.credits
+          : credits // ignore: cast_nullable_to_non_nullable
               as int?,
       name: freezed == name
           ? _value.name
@@ -126,7 +126,7 @@ class __$$_SubjectCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Subject implements _Subject {
-  const _$_Subject({this.id, this.credit, this.name, this.teacher});
+  const _$_Subject({this.id, this.credits, this.name, this.teacher});
 
   factory _$_Subject.fromJson(Map<String, dynamic> json) =>
       _$$_SubjectFromJson(json);
@@ -134,7 +134,7 @@ class _$_Subject implements _Subject {
   @override
   final int? id;
   @override
-  final int? credit;
+  final int? credits;
   @override
   final String? name;
   @override
@@ -142,7 +142,7 @@ class _$_Subject implements _Subject {
 
   @override
   String toString() {
-    return 'Subject(id: $id, credit: $credit, name: $name, teacher: $teacher)';
+    return 'Subject(id: $id, credits: $credits, name: $name, teacher: $teacher)';
   }
 
   @override
@@ -151,14 +151,14 @@ class _$_Subject implements _Subject {
         (other.runtimeType == runtimeType &&
             other is _$_Subject &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.credit, credit) || other.credit == credit) &&
+            (identical(other.credits, credits) || other.credits == credits) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.teacher, teacher) || other.teacher == teacher));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, credit, name, teacher);
+  int get hashCode => Object.hash(runtimeType, id, credits, name, teacher);
 
   @JsonKey(ignore: true)
   @override
@@ -177,7 +177,7 @@ class _$_Subject implements _Subject {
 abstract class _Subject implements Subject {
   const factory _Subject(
       {final int? id,
-      final int? credit,
+      final int? credits,
       final String? name,
       final String? teacher}) = _$_Subject;
 
@@ -186,7 +186,7 @@ abstract class _Subject implements Subject {
   @override
   int? get id;
   @override
-  int? get credit;
+  int? get credits;
   @override
   String? get name;
   @override

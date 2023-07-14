@@ -36,20 +36,22 @@ import 'features/basic/presentation/blocs/subjects_screen_blocs/get_subjects_blo
 final getIt = GetIt.instance;
 
 Future<void> init() async {
-  getIt.registerSingleton(() => GetClassRoomsBloc(getIt()));
-  getIt.registerSingleton(() => GetClassRoomByIdBloc(getIt()));
-  getIt.registerSingleton(() => DeleteRegistrationBloc(getIt()));
-  getIt.registerSingleton(() => GetRegistrationsBloc(getIt()));
-  getIt.registerSingleton(() => RegisterStudentSubjectBloc(getIt()));
-  getIt.registerSingleton(() => GetStudentsBloc(getIt()));
-  getIt.registerSingleton(() => GetSubjectsBloc(getIt()));
-  getIt.registerSingleton(() => StudentsGetStudentsUseCase(getIt()));
-  getIt.registerSingleton(() => SubjectsGetSubjectsUseCase(getIt()));
-  getIt.registerSingleton(() => ClassRoomGetClassRoomsUseCase(getIt()));
-  getIt.registerSingleton(() => ClassRoomGetClassRoomUseCase(getIt()));
-  getIt.registerSingleton(() => ClassRoomSetSubjectUseCase(getIt()));
-  getIt.registerSingleton(() => RegistrationsGetRegistrationsUseCase(getIt()));
-  getIt.registerSingleton(() => RegistrationsSetRegistrationUseCase(getIt()));
+  getIt.registerFactory(() => GetClassRoomsBloc(getIt()));
+  getIt.registerFactory(() => GetClassRoomByIdBloc(getIt()));
+  getIt.registerFactory(() => DeleteRegistrationBloc(getIt()));
+  getIt.registerFactory(() => GetRegistrationsBloc(getIt()));
+  getIt.registerFactory(() => RegisterStudentSubjectBloc(getIt()));
+  getIt.registerFactory(() => GetStudentsBloc(getIt()));
+  getIt.registerFactory(() => GetSubjectsBloc(getIt()));
+  getIt.registerLazySingleton(() => StudentsGetStudentsUseCase(getIt()));
+  getIt.registerLazySingleton(() => SubjectsGetSubjectsUseCase(getIt()));
+  getIt.registerLazySingleton(() => ClassRoomGetClassRoomsUseCase(getIt()));
+  getIt.registerLazySingleton(() => ClassRoomGetClassRoomUseCase(getIt()));
+  getIt.registerLazySingleton(() => ClassRoomSetSubjectUseCase(getIt()));
+  getIt.registerLazySingleton(
+      () => RegistrationsGetRegistrationsUseCase(getIt()));
+  getIt.registerLazySingleton(
+      () => RegistrationsSetRegistrationUseCase(getIt()));
   getIt
       .registerSingleton(() => RegistrationsDeleteRegistrationUseCase(getIt()));
   getIt.registerLazySingleton<StudentsRepository>(

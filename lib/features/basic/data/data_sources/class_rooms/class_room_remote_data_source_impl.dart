@@ -16,13 +16,20 @@ class ClassRoomRemoteDataSourceImpl implements ClassRoomRemoteDataSource {
 
   @override
   Future<ClassRooms> getClassRooms() async {
-    log("get classrooms called");
     Uri uri = Uri.parse(
         "${AppConstants.baseUrl}/classrooms/${AppConstants.tokenQuery}");
     final response =
         await client.get(uri, headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {
       var result = ClassRooms.fromJson(jsonDecode(response.body));
+      if ((result.classrooms ?? []).isNotEmpty) {
+        List<ClassRoom> classRoomList = [];
+        for (ClassRoom element in result.classrooms!) {
+          final classRoom = await getClassRoom(element.id);
+          classRoomList.add(classRoom);
+        }
+        return result.copyWith(classrooms: classRoomList);
+      }
       return result;
     } else {
       throw ServerException;
@@ -31,7 +38,6 @@ class ClassRoomRemoteDataSourceImpl implements ClassRoomRemoteDataSource {
 
   @override
   Future<ClassRoom> getClassRoom(int? id) async {
-    log("get classroom called");
     Uri uri = Uri.parse(
         "${AppConstants.baseUrl}/classrooms/$id${AppConstants.tokenQuery}");
     final response =

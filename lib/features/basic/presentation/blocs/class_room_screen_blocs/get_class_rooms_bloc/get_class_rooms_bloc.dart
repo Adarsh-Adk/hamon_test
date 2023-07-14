@@ -22,7 +22,7 @@ class GetClassRoomsBloc extends Bloc<GetClassRoomsEvent, GetClassRoomsState> {
           if (dataResponse.hasData) {
             ClassRooms classRooms = dataResponse.data;
 
-            if ((classRooms.classRooms ?? []).isEmpty) {
+            if ((classRooms.classrooms ?? []).isEmpty) {
               emit(GetClassRoomsState.failedState(
                   error: CustomExceptionHandler.exceptionToMessage(
                       EmptyListException())));
