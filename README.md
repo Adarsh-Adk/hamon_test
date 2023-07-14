@@ -4,13 +4,13 @@ Project for Hamon Test
 
 Flutter version: 3.10.5
 
-![Optional Text](../master/Screenshots/1.png)
-![Optional Text](../master/Screenshots/2.png)
-![Optional Text](../master/Screenshots/3.png)
-![Optional Text](../master/Screenshots/4.png)
-![Optional Text](../master/Screenshots/5.png)
-![Optional Text](../master/Screenshots/6.png)
-![Optional Text](../master/Screenshots/7.png)
-![Optional Text](../master/Screenshots/8.png)
-![Optional Text](../master/Screenshots/9.png)
-![Optional Text](../master/Screenshots/10.png)
+![Optional Text](../master/screenshots/1.png)
+![Optional Text](../master/screenshots/2.png)
+![Optional Text](../master/screenshots/3.png)
+![Optional Text](../master/screenshots/4.png)
+![Optional Text](../master/screenshots/5.png)
+![Optional Text](../master/screenshots/6.png)
+![Optional Text](../master/screenshots/7.png)
+![Optional Text](../master/screenshots/8.png)
+![Optional Text](../master/screenshots/9.png)
+![Optional Text](../master/screenshots/10.png)
