@@ -16,20 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DeleteRegistrationEvent {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) delete,
+    required TResult Function(int? id) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? delete,
+    TResult? Function(int? id)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? delete,
+    TResult Function(int? id)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $DeleteRegistrationEventCopyWith<$Res> {
           $Res Function(DeleteRegistrationEvent) then) =
       _$DeleteRegistrationEventCopyWithImpl<$Res, DeleteRegistrationEvent>;
   @useResult
-  $Res call({int id});
+  $Res call({int? id});
 }
 
 /// @nodoc
@@ -78,13 +78,13 @@ class _$DeleteRegistrationEventCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -96,7 +96,7 @@ abstract class _$$_DeleteCopyWith<$Res>
       __$$_DeleteCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id});
+  $Res call({int? id});
 }
 
 /// @nodoc
@@ -109,13 +109,13 @@ class __$$_DeleteCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
   }) {
     return _then(_$_Delete(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -126,7 +126,7 @@ class _$_Delete implements _Delete {
   const _$_Delete({required this.id});
 
   @override
-  final int id;
+  final int? id;
 
   @override
   String toString() {
@@ -153,7 +153,7 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) delete,
+    required TResult Function(int? id) delete,
   }) {
     return delete(id);
   }
@@ -161,7 +161,7 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? delete,
+    TResult? Function(int? id)? delete,
   }) {
     return delete?.call(id);
   }
@@ -169,7 +169,7 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? delete,
+    TResult Function(int? id)? delete,
     required TResult orElse(),
   }) {
     if (delete != null) {
@@ -208,10 +208,10 @@ class _$_Delete implements _Delete {
 }
 
 abstract class _Delete implements DeleteRegistrationEvent {
-  const factory _Delete({required final int id}) = _$_Delete;
+  const factory _Delete({required final int? id}) = _$_Delete;
 
   @override
-  int get id;
+  int? get id;
   @override
   @JsonKey(ignore: true)
   _$$_DeleteCopyWith<_$_Delete> get copyWith =>

@@ -43,7 +43,7 @@ class RegistrationsRepositoryImpl implements RegistrationsRepository {
 
           return DataResponse(data: finalModel);
         } else {
-          return DataResponse(error: "Failed to get additional data");
+          return DataResponse(error: "Registrations are empty");
         }
       } else {
         return DataResponse(error: "Registrations are empty");

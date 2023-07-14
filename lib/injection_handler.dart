@@ -54,8 +54,8 @@ Future<void> init() async {
       () => RegistrationsGetRegistrationsUseCase(getIt()));
   getIt.registerLazySingleton(
       () => RegistrationsSetRegistrationUseCase(getIt()));
-  getIt
-      .registerSingleton(() => RegistrationsDeleteRegistrationUseCase(getIt()));
+  getIt.registerLazySingleton(
+      () => RegistrationsDeleteRegistrationUseCase(getIt()));
   getIt.registerLazySingleton<StudentsRepository>(
       () => StudentsRepositoryImpl(remoteDataSource: getIt()));
   getIt.registerLazySingleton<SubjectsRepository>(

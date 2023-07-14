@@ -98,94 +98,8 @@ class _ClassRoomsScreenState extends State<ClassRoomsScreen> {
                                   OutlinedButton(
                                       onPressed: () {
                                         Subject? subject;
-                                        showDialog(
-                                            context: context,
-                                            builder: (context) {
-                                              return Dialog(
-                                                insetPadding:
-                                                    const EdgeInsets.all(
-                                                        AppConstants
-                                                            .defaultPadding),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.all(
-                                                      AppConstants
-                                                          .defaultPadding),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    children: [
-                                                      const AppPadding(),
-                                                      BlocBuilder<
-                                                              GetSubjectsBloc,
-                                                              GetSubjectsState>(
-                                                          builder:
-                                                              (context, state) {
-                                                        return state.when(
-                                                            initialState: () =>
-                                                                const LinearProgressIndicator(),
-                                                            loadingState: () =>
-                                                                const LinearProgressIndicator(),
-                                                            successState:
-                                                                (data) {
-                                                              return Column(
-                                                                children: [
-                                                                  DropdownButtonHideUnderline(
-                                                                    child: DropdownButtonFormField(
-                                                                        hint: const Text("Select Subject"),
-                                                                        onChanged: (ele) {
-                                                                          subject =
-                                                                              ele;
-                                                                        },
-                                                                        value: subject,
-                                                                        items: data.subjects!
-                                                                            .map((e) => DropdownMenuItem<Subject>(
-                                                                                  value: e,
-                                                                                  child: Text(
-                                                                                    e.name ?? "",
-                                                                                  ),
-                                                                                ))
-                                                                            .toList()),
-                                                                  ),
-                                                                  const AppPadding(),
-                                                                  SizedBox(
-                                                                    width: double
-                                                                        .infinity,
-                                                                    child: ElevatedButton(
-                                                                        onPressed: () {
-                                                                          if (subject !=
-                                                                              null) {
-                                                                            context.read<ClassRoomSetSubjectBloc>().add(ClassRoomSetSubjectEvent.setSubject(
-                                                                                subjectId: subject?.id,
-                                                                                classRoomId: classRoom.id));
-                                                                            if (mounted) {
-                                                                              Navigator.pop(context);
-                                                                            }
-                                                                          } else {
-                                                                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                                                              content: Text(
-                                                                                "Please select a valid subject",
-                                                                                style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Theme.of(context).colorScheme.onError),
-                                                                              ),
-                                                                              backgroundColor: Theme.of(context).colorScheme.error,
-                                                                            ));
-                                                                          }
-                                                                        },
-                                                                        child: const Text("Update")),
-                                                                  )
-                                                                ],
-                                                              );
-                                                            },
-                                                            failedState: (error) =>
-                                                                ErrorOrLoadingIndicatorWidget(
-                                                                  error: error,
-                                                                ));
-                                                      })
-                                                    ],
-                                                  ),
-                                                ),
-                                              );
-                                            });
+                                        selectSubjectDialog(
+                                            context, subject, classRoom);
                                       },
                                       child: const Text("Update Subject"))
                                 ],
@@ -200,5 +114,94 @@ class _ClassRoomsScreenState extends State<ClassRoomsScreen> {
         ),
       ),
     );
+  }
+
+  Future<dynamic> selectSubjectDialog(
+      BuildContext context, Subject? subject, ClassRoom classRoom) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            insetPadding: const EdgeInsets.all(AppConstants.defaultPadding),
+            child: Padding(
+              padding: const EdgeInsets.all(AppConstants.defaultPadding),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const AppPadding(),
+                  BlocBuilder<GetSubjectsBloc, GetSubjectsState>(
+                      builder: (context, state) {
+                    return state.when(
+                        initialState: () => const LinearProgressIndicator(),
+                        loadingState: () => const LinearProgressIndicator(),
+                        successState: (data) {
+                          return Column(
+                            children: [
+                              DropdownButtonHideUnderline(
+                                child: DropdownButtonFormField(
+                                    hint: const Text("Select Subject"),
+                                    onChanged: (ele) {
+                                      subject = ele;
+                                    },
+                                    value: subject,
+                                    items: data.subjects!
+                                        .map((e) => DropdownMenuItem<Subject>(
+                                              value: e,
+                                              child: Text(
+                                                e.name ?? "",
+                                              ),
+                                            ))
+                                        .toList()),
+                              ),
+                              const AppPadding(),
+                              SizedBox(
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                    onPressed: () {
+                                      if (subject != null) {
+                                        context
+                                            .read<ClassRoomSetSubjectBloc>()
+                                            .add(ClassRoomSetSubjectEvent
+                                                .setSubject(
+                                                    subjectId: subject?.id,
+                                                    classRoomId: classRoom.id));
+                                        if (mounted) {
+                                          Navigator.pop(context);
+                                        }
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .hideCurrentSnackBar();
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(SnackBar(
+                                          content: Text(
+                                            "Please select a valid subject",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge
+                                                ?.copyWith(
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .onError),
+                                          ),
+                                          backgroundColor: Theme.of(context)
+                                              .colorScheme
+                                              .error,
+                                        ));
+                                      }
+                                    },
+                                    child: const Text("Update")),
+                              )
+                            ],
+                          );
+                        },
+                        failedState: (error) => ErrorOrLoadingIndicatorWidget(
+                              error: error,
+                            ));
+                  })
+                ],
+              ),
+            ),
+          );
+        });
   }
 }

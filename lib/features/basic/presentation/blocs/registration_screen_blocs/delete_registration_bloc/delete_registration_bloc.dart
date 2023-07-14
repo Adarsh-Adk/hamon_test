@@ -18,7 +18,7 @@ class DeleteRegistrationBloc
     on<DeleteRegistrationEvent>((event, emit) async {
       emit(const DeleteRegistrationState.loadingState());
       try {
-        event.when(delete: (id) async {
+        await event.when(delete: (id) async {
           final dataResponse = await registrationDeleteRegistrationUseCase(
               DeleteRegistrationParams(id: id));
           if (dataResponse.hasData) {

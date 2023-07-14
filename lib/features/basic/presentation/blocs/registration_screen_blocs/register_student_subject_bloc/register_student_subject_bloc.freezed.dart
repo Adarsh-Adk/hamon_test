@@ -16,21 +16,21 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$RegisterStudentSubjectEvent {
-  int get studentId => throw _privateConstructorUsedError;
-  int get subjectId => throw _privateConstructorUsedError;
+  int? get studentId => throw _privateConstructorUsedError;
+  int? get subjectId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int studentId, int subjectId) register,
+    required TResult Function(int? studentId, int? subjectId) register,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int studentId, int subjectId)? register,
+    TResult? Function(int? studentId, int? subjectId)? register,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int studentId, int subjectId)? register,
+    TResult Function(int? studentId, int? subjectId)? register,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,7 +64,7 @@ abstract class $RegisterStudentSubjectEventCopyWith<$Res> {
       _$RegisterStudentSubjectEventCopyWithImpl<$Res,
           RegisterStudentSubjectEvent>;
   @useResult
-  $Res call({int studentId, int subjectId});
+  $Res call({int? studentId, int? subjectId});
 }
 
 /// @nodoc
@@ -81,18 +81,18 @@ class _$RegisterStudentSubjectEventCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? studentId = null,
-    Object? subjectId = null,
+    Object? studentId = freezed,
+    Object? subjectId = freezed,
   }) {
     return _then(_value.copyWith(
-      studentId: null == studentId
+      studentId: freezed == studentId
           ? _value.studentId
           : studentId // ignore: cast_nullable_to_non_nullable
-              as int,
-      subjectId: null == subjectId
+              as int?,
+      subjectId: freezed == subjectId
           ? _value.subjectId
           : subjectId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -105,7 +105,7 @@ abstract class _$$_RegisterCopyWith<$Res>
       __$$_RegisterCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int studentId, int subjectId});
+  $Res call({int? studentId, int? subjectId});
 }
 
 /// @nodoc
@@ -119,18 +119,18 @@ class __$$_RegisterCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? studentId = null,
-    Object? subjectId = null,
+    Object? studentId = freezed,
+    Object? subjectId = freezed,
   }) {
     return _then(_$_Register(
-      studentId: null == studentId
+      studentId: freezed == studentId
           ? _value.studentId
           : studentId // ignore: cast_nullable_to_non_nullable
-              as int,
-      subjectId: null == subjectId
+              as int?,
+      subjectId: freezed == subjectId
           ? _value.subjectId
           : subjectId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -141,9 +141,9 @@ class _$_Register implements _Register {
   const _$_Register({required this.studentId, required this.subjectId});
 
   @override
-  final int studentId;
+  final int? studentId;
   @override
-  final int subjectId;
+  final int? subjectId;
 
   @override
   String toString() {
@@ -173,7 +173,7 @@ class _$_Register implements _Register {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int studentId, int subjectId) register,
+    required TResult Function(int? studentId, int? subjectId) register,
   }) {
     return register(studentId, subjectId);
   }
@@ -181,7 +181,7 @@ class _$_Register implements _Register {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int studentId, int subjectId)? register,
+    TResult? Function(int? studentId, int? subjectId)? register,
   }) {
     return register?.call(studentId, subjectId);
   }
@@ -189,7 +189,7 @@ class _$_Register implements _Register {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int studentId, int subjectId)? register,
+    TResult Function(int? studentId, int? subjectId)? register,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -229,13 +229,13 @@ class _$_Register implements _Register {
 
 abstract class _Register implements RegisterStudentSubjectEvent {
   const factory _Register(
-      {required final int studentId,
-      required final int subjectId}) = _$_Register;
+      {required final int? studentId,
+      required final int? subjectId}) = _$_Register;
 
   @override
-  int get studentId;
+  int? get studentId;
   @override
-  int get subjectId;
+  int? get subjectId;
   @override
   @JsonKey(ignore: true)
   _$$_RegisterCopyWith<_$_Register> get copyWith =>
