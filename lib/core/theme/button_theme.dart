@@ -7,7 +7,7 @@ class AppButtonThemeData {
   static ElevatedButtonThemeData elevatedButtonThemeData() {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
-        elevation: MaterialStateProperty.all(0),
+        elevation: MaterialStateProperty.all(5),
         padding: MaterialStateProperty.all(
           const EdgeInsets.symmetric(
               horizontal: AppConstants.defaultPadding,

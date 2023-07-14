@@ -122,21 +122,37 @@ class _RegistrationsScreenState extends State<RegistrationsScreen> {
                                       label: "Registration ID",
                                       value:
                                           (registration.id ?? "").toString()),
-                                  const AppPadding(),
-                                  ElevatedButton(
+                                  const AppPadding(
+                                    multipliedBy: 2,
+                                  ),
+                                  OutlinedButton.icon(
                                       style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStatePropertyAll(
-                                                  Theme.of(context)
+                                          side: MaterialStatePropertyAll(
+                                              BorderSide(
+                                                  color: Theme.of(context)
                                                       .colorScheme
-                                                      .error)),
+                                                      .error))),
+                                      icon: Icon(
+                                        Icons.delete_outline,
+                                        color:
+                                            Theme.of(context).colorScheme.error,
+                                      ),
                                       onPressed: () {
                                         context
                                             .read<DeleteRegistrationBloc>()
                                             .add(DeleteRegistrationEvent.delete(
                                                 id: registration.id));
                                       },
-                                      child: const Text("Delete Registration"))
+                                      label: Text(
+                                        "Delete Registration",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .error),
+                                      ))
                                 ],
                               ),
                             ),
