@@ -23,7 +23,7 @@ class _ClassRoomsScreenState extends State<ClassRoomsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ClassRooms"),
+        title: const Text("Classrooms"),
         centerTitle: true,
         actions: [
           IconButton(
