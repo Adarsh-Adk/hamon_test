@@ -71,6 +71,9 @@ class AppTheme {
         displayMedium: TextStyle(
           color: AppColorScheme.primaryContainerColorLight,
         ),
+        headlineLarge: TextStyle(
+          color: AppColorScheme.primaryContainerColorLight,
+        ),
         headlineMedium: TextStyle(
           color: AppColorScheme.primaryContainerColorLight,
         ),

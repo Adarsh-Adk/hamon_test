@@ -11,7 +11,11 @@ class ErrorOrLoadingIndicatorWidget extends StatelessWidget {
       child: Center(
           child: error == null
               ? const CircularProgressIndicator()
-              : Text("$error")),
+              : Text(
+                  "$error",
+                  style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                )),
     );
   }
 }
